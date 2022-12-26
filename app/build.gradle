@@ -53,6 +53,9 @@ android {
             useJUnitPlatform()
         }
     }
+    /*tasks.withType(Test) {
+        useJUnitPlatform()
+    }*/
 }
 
 /*
