@@ -88,3 +88,4 @@ lint/tmp/
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/kotlinc.xml
 /.idea/androidTestResultsUserPreferences.xml
+/.idea/.name
