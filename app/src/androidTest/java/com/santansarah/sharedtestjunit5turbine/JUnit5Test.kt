@@ -1,7 +1,8 @@
 package com.santansarah.sharedtestjunit5turbine
 
+import android.util.Log
 import app.cash.turbine.test
-import com.santansarah.sharedtest.testSharedData
+import com.santansarah.sharedtest.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Assertions
@@ -13,7 +14,7 @@ class JUnit5Test {
     fun testSharedModule()
     {
         Assertions.assertEquals(1, testSharedData.id)
-        println("Got here...")
+        Log.d("debug", "Got here...")
     }
 
     @Test
@@ -25,7 +26,7 @@ class JUnit5Test {
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun testFlow() = runTest {
-        com.santansarah.sharedtest.testFlow.test {
+        testFlow.test {
             Assertions.assertEquals(1, awaitItem().id)
             cancelAndConsumeRemainingEvents()
         }
