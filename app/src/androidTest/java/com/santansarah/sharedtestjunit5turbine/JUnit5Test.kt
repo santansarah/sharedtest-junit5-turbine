@@ -28,7 +28,7 @@ class JUnit5Test {
     fun testFlow() = runTest {
         testFlow.test {
             Assertions.assertEquals(1, awaitItem().id)
-            cancelAndConsumeRemainingEvents()
+            cancelAndIgnoreRemainingEvents()
         }
     }
 
