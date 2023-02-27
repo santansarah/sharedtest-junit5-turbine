@@ -31,17 +31,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.3.2'
+        kotlinCompilerExtensionVersion '1.4.3'
     }
     packagingOptions {
         resources {
@@ -58,11 +58,11 @@ android {
     }*/
 }
 
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+/*tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
-}
+}*/
 
 
 
@@ -81,11 +81,11 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
     implementation 'androidx.activity:activity-compose:1.6.1'
     implementation platform('androidx.compose:compose-bom:2022.10.00')
-    implementation 'androidx.compose.ui:ui:1.3.2'
-    implementation 'androidx.compose.ui:ui-graphics:1.3.2'
-    implementation 'androidx.compose.ui:ui-tooling-preview:1.3.2'
-    implementation 'androidx.compose.material3:material3:1.1.0-alpha03'
-    debugImplementation 'androidx.compose.ui:ui-tooling:1.3.2'
+    implementation 'androidx.compose.ui:ui:1.3.3'
+    implementation 'androidx.compose.ui:ui-graphics:1.3.3'
+    implementation 'androidx.compose.ui:ui-tooling-preview:1.3.3'
+    implementation 'androidx.compose.material3:material3:1.1.0-alpha06'
+    debugImplementation 'androidx.compose.ui:ui-tooling:1.3.3'
 
     testImplementation project(path: ':sharedTest')
     androidTestImplementation project(path: ':sharedTest')
@@ -97,7 +97,7 @@ dependencies {
     testImplementation 'io.mockk:mockk:1.13.3'
 
     // ******* ANDROID TESTING ***************************************************
-    androidTestImplementation 'androidx.test:runner:1.5.1'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
     androidTestImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     androidTestImplementation 'de.mannodermaus.junit5:android-test-core:1.3.0'
     androidTestRuntimeOnly 'de.mannodermaus.junit5:android-test-runner:1.3.0'
@@ -107,7 +107,7 @@ dependencies {
 
     // Compose testing dependencies
     androidTestImplementation "androidx.compose.ui:ui-test"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.4.0-alpha03"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.4.0-beta01"
     debugImplementation "androidx.compose.ui:ui-test-manifest"
 
     androidTestImplementation 'de.mannodermaus.junit5:android-test-compose:0.1.0-SNAPSHOT'
